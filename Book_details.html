@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Million OLMS</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Million OLMS</h1>
+            <img src="profile2.png" alt="">
+        </header>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="Profile.html">My Profile</a></li>
+                <li><a href="Admin_DB.html">Home</a></li>
+                <li><a href="Message.html">Messages</a></li>
+                <li><a href="Manage_user.html">Manage Users</a></li>
+                <li><a href="All_books.html">All Books</a></li>
+                <li><a href="Add_books.html">Add Books</a></li>
+                <li><a href="Reserve_books.html">Reserve / Return Requests</a></li>
+                <li><a href="Currently_reserved_books.html">Currently Issued Books</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <h2 style="margin-left: 360px;">Book Details</h2>
+            
+                <div class="box">
+                <p><strong>Book ID:</strong> 1</p>
+                <p><strong>Title:</strong> #######</p>
+                <p><strong>Author:</strong> #######</p>
+                <p><strong>Publisher:</strong> ########</p>
+                <p><strong>Year:</strong> ####</p>
+                <p><strong>Availability:</strong> 3</p>
+                <button type="button" onclick="goBack()">Go Back</button>
+            </div>
+            
+        </main>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Million OLMS</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            width: 30%;
+        }
+
+        .button {
+            background-color: #5b5e61;
+            border: none;
+            padding: 10px 10px;
+            cursor: pointer;
+        }
+
+        .button.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Million OLMS</h1>
+            <img src="profile2.png" alt="">
+        </header>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="Profile.html">My Profile</a></li>
+                <li><a href="Admin_DB.html">Home</a></li>
+                <li><a href="Message.html">Messages</a></li>
+                <li><a href="Manage_user.html">Manage Users</a></li>
+                <li><a href="All_books.html">All Books</a></li>
+                <li><a href="Add_books.html">Add Books</a></li>
+                <li><a href="Reserve_books.html">Reserve / Return Requests</a></li>
+                <li><a href="Currently_reserved_books.html">Currently Issued Books</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <h2 style="margin-left: 360px;">Renew Requests</h2>
+            <div class="button-container">
+                <button class="button" id="reserve">Reserve Requests</button>
+                <button class="button" id="renew">Renew Request</button>
+                <button class="button" id="return">Return Requests</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Serial Number</th>
+                        <th>Book ID</th>
+                        <th>Book Name</th>
+                        <th>Availability</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12</td>
+                        <td>123</td>
+                        <td>amal</td>
+                        <td>2</td>
+                        <td>
+                            <button>Accept</button>
+                            <button>Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Amal</td>
+                        <td>123</td>
+                        <td>amal@gmail.com</td>
+                        <td>2</td>
+                        <td>
+                            <button>Accept</button>
+                            <button>Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Amal</td>
+                        <td>123</td>
+                        <td>amal@gmail.com</td>
+                        <td>2</td>
+                        <td>
+                            <button>Accept</button>
+                            <button>Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Amal</td>
+                        <td>123</td>
+                        <td>amal@gmail.com</td>
+                        <td>2</td>
+                        <td>
+                            <button>Accept</button>
+                            <button>Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Amal</td>
+                        <td>123</td>
+                        <td>amal@gmail.com</td>
+                        <td>2</td>
+                        <td>
+                            <button>Accept</button>
+                            <button>Reject</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Amal</td>
+                        <td>123</td>
+                        <td>amal@gmail.com</td>
+                        <td>2</td>
+                        <td>
+                            <button>Accept</button>
+                            <button>Reject</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <script>
+        const buttons = document.querySelectorAll('.button');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Million OLMS</title>
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .admin-info {
+            width: 600px;
+            height: 300px;
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .admin-image {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+        }
+        button {
+    padding: 10px 20px;
+    background-color: #5b5e61;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  button:hover {
+    background-color: #000000;
+  }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Million OLMS</h1>
+            <img src="profile2.png" alt="">
+        </header>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="Profile.html">My Profile</a></li>
+                <li><a href="Admin_DB.html">Home</a></li>
+                <li><a href="Message.html">Messages</a></li>
+                <li><a href="Manage_user.html">Manage Users</a></li>
+                <li><a href="All_books.html">All Books</a></li>
+                <li><a href="Add_books.html">Add Books</a></li>
+                <li><a href="Reserve_books.html">Reserve / Return Requests</a></li>
+                <li><a href="Currently_reserved_books.html">Currently Issued Books</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </aside>
+        <div class="main-content">
+            <div class="admin-info">
+                <div class="admin-image"></div>
+                <h2>Admin</h2>
+                <p>E-mail ID: ###########</p>
+                <p>Mobile No: ###########</p>
+                <button class="edit-button" ><a href="Edit_Profile.html" style="text-decoration: none; color: #fbf7f7;">Edit Details</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
