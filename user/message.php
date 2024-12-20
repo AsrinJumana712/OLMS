@@ -1,3 +1,11 @@
+<?php
+require('dbconn.php');
+?>
+
+<?php
+if ($_SESSION['RollNo']){
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +44,7 @@
                 <div class="menu_title menu_dahsboard"></div>
                 <!-- start -->
                 <li class="item">
-                    <a href="#" class="nav_link submenu_item">
+                    <a href="home.html" class="nav_link submenu_item">
                         <span class="navlink_icon">
                             <i class="bx bx-home-alt"></i>
                         </span>
@@ -63,16 +71,7 @@
                 </li>
 
                 <li class="item">
-                    <a href="#" class="nav_link submenu_item">
-                        <span class="navlink_icon">
-                            <i class='bx bxs-user-detail'></i>
-                        </span>
-                        <span class="navlink">Manage Students</span>
-                    </a>
-                </li>
-
-                <li class="item">
-                    <a href="#" class="nav_link submenu_item">
+                    <a href="book_details.html" class="nav_link submenu_item">
                         <span class="navlink_icon">
                             <i class='bx bx-book'></i>
                         </span>
@@ -81,11 +80,11 @@
                 </li>
 
                 <li class="item">
-                    <a href="#" class="nav_link submenu_item">
+                    <a href="currently_reserved.html" class="nav_link submenu_item">
                         <span class="navlink_icon">
                             <i class='bx bxs-edit'></i>
                         </span>
-                        <span class="navlink">Add Books</span>
+                        <span class="navlink">Previously Borrowed <br> Books</span>
                     </a>
                 </li>
 
@@ -94,16 +93,7 @@
                         <span class="navlink_icon">
                             <i class='bx bx-right-indent'></i>
                         </span>
-                        <span class="navlink">Reserve/Return<br>Requests</span>
-                    </a>
-                </li>
-
-                <li class="item">
-                    <a href="#" class="nav_link submenu_item">
-                        <span class="navlink_icon">
-                            <i class='bx bx-list-ul'></i>
-                        </span>
-                        <span class="navlink">Currently Issued<br>Books</span>
+                        <span class="navlink">Currently Reserved <br> Books</span>
                     </a>
                 </li>
 
@@ -132,8 +122,11 @@
         </div>
     </nav>
 
-    <main class="content">
+    <main class="message_content">
         <section class="message-section">
+            <div>
+                <button class="due_btn"><a style ="text-decoration:none; color: aliceblue;" href="Due_fund.html">Due Fund</a></button>  
+            </div>
             <table class="message-table">
                 <thead>
                     <tr>
@@ -142,22 +135,60 @@
                         <th>Time</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Welcome to the Online Library Management System (Million Library - OLMS)</td>
-                        <td>2024-08-12</td>
-                        <td>10:00 AM</td>
-                    </tr>
-                    <tr>
-                        <td>Your requested book is now available</td>
-                        <td>2024-09-10</td>
-                        <td>2:30 PM</td>
-                    </tr>
-                </tbody>
+            <tbody>
+                <?php
+                $rollno = $_SESSION['RollNo'];
+                $sql="select * FROM LMS.message where RollNo = '$rollno' order by Date DESC, Time DESC";
+                $result=$conn-> query($sql);
+                while($row=$result-> fetch_assoc())
+                {
+                    $msg=$row['Msg'];
+                    $date=$row['Date'];
+                    $time=$row['Time'];
+                    ?>
+                    
+                        <tr>
+                            <td><?php echo $msg ?></td>
+                            <td><?php echo $date ?></td>
+                            <td><?php echo $time ?></td>
+                        </tr>
+               <?php } ?>
+            </tbody>
             </table>
         </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div>
+                    <h3>Million Library</h3>
+                    <p>OLMS</p>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Terms and conditions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#">Plans</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        
+        <p style="margin-left: 650px; margin-top: 20px;">&copy; 2024 Million Library. All rights reserved.</p>
 
         <script src="script.js"></script>
 </body>
 
 </html>
+
+<?php }
+else {
+    echo "<script type='text/javascript'>alert('Access Denied!!!')</script>";
+} ?>  

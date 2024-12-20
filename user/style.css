@@ -308,10 +308,10 @@ body.dark {
     }
 }
 
-/* Profile Page Styles */
+/* Profile Page */
 .profile_page {
-    margin: 150px 60px;
-    /* Adjust margin to align with the sidebar */
+    margin: 100px 50px 60px 300px;
+    
 }
 
 .profile_box {
@@ -338,7 +338,9 @@ body.dark {
     margin-bottom: 10px;
 }
 
-.profile_email, .profile_serialNo, .profile_mobileNumber{
+.profile_email,
+.profile_serialNo,
+.profile_mobileNumber {
     font-size: 16px;
     font-weight: 500;
     color: #666;
@@ -362,7 +364,7 @@ body.dark {
 }
 
 /* Message table styling */
-.content {
+.message_content {
     flex: 1;
     padding: 20px;
     display: flex;
@@ -371,8 +373,8 @@ body.dark {
 
 .message-section {
     margin-top: 100px;
-    flex-grow: 1;
-    margin-left: 300px;
+    margin-left: 280px;
+    margin-bottom: 20px;
 }
 
 .message-table {
@@ -380,7 +382,7 @@ body.dark {
     border-collapse: collapse;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
 }
 
@@ -404,3 +406,233 @@ body.dark {
 .message-table tbody tr:nth-child(even) {
     background-color: #fafafa;
 }
+
+.due_btn {
+    float: right;
+    padding: 1px 20px;
+    font-size: 16px;
+    color: #784939;
+    background-color: #D8D2D0;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-bottom: 10px;
+}
+
+.due_btn:hover {
+    background-color: #c9ac9f;
+}
+
+
+/* All books table styling */
+.main-content {
+    grid-area: main;
+    padding: 20px;
+    margin-left: 280px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.search-bar label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.search-bar input {
+    padding: 5px;
+    margin-right: 10px;
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.search-bar button:hover {
+    background-color: #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+table th40px,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #f0f0f0;
+    height: 30px;
+    background-color: #ccc;
+}
+
+table td button {
+    display: inline-block;
+    padding: 1px 20px;
+    font-size: 16px;
+    color: #784939;
+    background-color: #D8D2D0;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+table td button:hover {
+    background-color: #ddd;
+}
+
+
+/* Edit Profile */
+.edit-section {
+    width: 75%;
+    padding-left: 30px;
+    margin-left: 600px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(221, 118, 53, 0.1);
+    max-width: 600px;
+}
+
+.profile_image1 {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    margin-left: 200px;
+}
+
+.profile-placeholder {
+    width: 120px;
+    height: 120px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #555;
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.save-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #784939;
+    background-color: #D8D2D0;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    width: 40%;
+    margin-left: 180px;
+    text-align: center;
+}
+
+.save-btn:hover {
+    background-color: #ddd;
+}
+
+
+/* Home */
+.home_content {
+    margin-top: 100px;
+    margin-left: 280px;
+    flex: 1;
+    padding: 20px;
+}
+
+.banner {
+    width: 1200PX;
+    height: 400PX;
+    border: 2px solid #aaa;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+.about-library h2 {
+    margin-bottom: 10px;
+}
+
+.about-library p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 300px;
+    margin-right: 100px;
+    width: 79%;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+footer ul {
+    list-style-type: none;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+footer h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+
+
+
