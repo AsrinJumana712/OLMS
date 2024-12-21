@@ -137,7 +137,7 @@ require('dbconn.php');
       $email = $row['EmailId'];
       $mobno = $row['MobNo'];
       ?>
-      <i>
+      
         <h1 class="card-title">
           <center><?php echo $name ?></center>
         </h1>
@@ -150,11 +150,11 @@ require('dbconn.php');
         <br>
         <p><b>Mobile number: </b><?php echo $mobno ?></p>
         </b>
-      </i>
-
+      
+      <a href="edit_profile.html" class="edit_button">Edit Details</a>
     </div>
   </div>
-  <a href="edit_profile.html" class="edit_button">Edit Details</a>
+  
   </div>
   </div>
 

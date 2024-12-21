@@ -1,3 +1,8 @@
+<?php
+ob_start();
+require('dbconn.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,20 +123,47 @@
         <h2>Edit Details</h2>
         <img src="images/profile.jpg" alt="User Image" class="profile_image1" />
         </div>
-        <form>
+
+        <?php
+        $rollno = $_SESSION['RollNo'];
+        $sql = "select * from LMS.user where RollNo = '$rollno'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+
+        $name = $row['Name'];
+        $category = $row['Category'];
+        $email = $row['EmailId'];
+        $mobno = $row['MobNo'];
+        $pswd = $row['Password'];
+        ?>
+
+        <form action="edit_profile.php?id=<?php echo $rollno ?>" method="post">
             <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Enter your name">
-            
+            <input type="text" id="name" placeholder="Enter your name" name="Name" value="<?php echo $name ?>">
+
+            <label class="control-label" for="Category"><b>Category:</b></label>
+            <div class="controls">
+                <select name="Category" tabindex="1" value="SC" data-placeholder="Select Category" class="span6">
+                    <option value="<?php echo $category ?>"><?php echo $category ?> </option>
+                    <option value="GEN">GEN</option>
+                    <option value="OBC">OBC</option>
+                    <option value="SC">SC</option>
+                    <option value="ST">ST</option>
+                </select>
+            </div>
+
             <label for="email">E-mail ID:</label>
-            <input type="email" id="email" placeholder="Enter your email">
-            
+            <input type="email" id="email" placeholder="Enter your email" name="EmailId" value="<?php echo $email ?>">
+
             <label for="mobile">Mobile number:</label>
-            <input type="tel" id="mobile" placeholder="Enter your mobile number">
-            
+            <input type="tel" id="mobile" placeholder="Enter your mobile number" name="MobNo"
+                value="<?php echo $mobno ?>">
+
             <label for="password">New Password:</label>
-            <input type="password" id="password" placeholder="Enter new password">
-            
-            
+            <input type="password" id="password" placeholder="Enter new password" name="Password"
+                value="<?php echo $pswd ?>">
+
+
         </form>
         <a href="profile.html" class="save-btn">Save</a>
     </section>
@@ -158,10 +190,31 @@
             </div>
         </div>
     </footer>
-    
+
     <p style="margin-left: 750px; margin-top: 20px;">&copy; 2024 Million Library. All rights reserved.</p>
 
-        <script src="script.js"></script>
+    <script src="script.js"></script>
+    <?php
+    if (isset($_POST['submit'])) {
+        $rollno = $_GET['id'];
+        $name = $_POST['Name'];
+        $category = $_POST['Category'];
+        $email = $_POST['EmailId'];
+        $mobno = $_POST['MobNo'];
+        $pswd = $_POST['Password'];
+
+        $sql1 = "update LMS.user set Name='$name', Category='$category', EmailId='$email', MobNo='$mobno', Password='$pswd' where RollNo='$rollno'";
+
+
+
+        if ($conn->query($sql1) === TRUE) {
+            echo "<script type='text/javascript'>alert('Success')</script>";
+            header("Refresh:0.01; url=index.php", true, 303);
+        } else {//echo $conn->error;
+            echo "<script type='text/javascript'>alert('Error')</script>";
+        }
+    }
+    ?>
 </body>
 
 </html>
